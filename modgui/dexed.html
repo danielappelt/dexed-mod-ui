@@ -1,0 +1,172 @@
+<div mod-role="bypass-light" class="mod-pedal dexed{{{cns}}} mod-black">
+    <div mod-role="drag-handle" class="mod-drag-handle"></div>
+    <div mod-role="bypass" class="mod-switch"></div>
+    <div class="mod-plugin-name"><h1>{{label}}</h1></div>
+    <div class="mod-pedal-input">
+        {{#effect.ports.midi.input}}
+        <div class="mod-input mod-input-disconnected" title="{{name}}" mod-role="input-midi-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-input-image"></div>
+        </div>
+        {{/effect.ports.midi.input}}
+    </div>
+    <div class="mod-pedal-output">
+        {{#effect.ports.audio.output}}
+        <div class="mod-output mod-output-disconnected" title="{{name}}" mod-role="output-audio-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-output-image"></div>
+        </div>
+        {{/effect.ports.audio.output}}
+        {{#effect.ports.midi.output}}
+        <div class="mod-output mod-output-disconnected" title="{{name}}" mod-role="output-midi-port" mod-port-symbol="{{symbol}}">
+            <div class="mod-pedal-output-image"></div>
+        </div>
+        {{/effect.ports.midi.output}}
+    </div>
+    <div class="mod-control-group mod-presets">
+        <select mod-role="presets">
+            <option value="">---</option>
+            {{#effect.presets}}
+            <option mod-role="preset-label" value="{{uri}}">{{label}}</option>
+            {{/effect.presets}}
+        </select>
+    </div>
+    <!-- 6x4 OP grid -->
+    <div class="mod-control-group operators">
+      <div><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <!-- FIRST ROW: algorithm, feedback, cutoff, resonance, volume -->
+    <div class="mod-control-group">
+        {{#controls.3}}
+        <span class="algorithm minimum" mod-role="input-control-minimum" mod-port-symbol="{{symbol}}"></span>
+        <span class="algorithm maximum" mod-role="input-control-maximum" mod-port-symbol="{{symbol}}"></span>
+        <div class="mod-knob" title="{{comment}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+	<!-- <input mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="select"> -->
+        {{/controls.3}}
+        {{#controls.4}}
+        <div class="mod-knob" title="{{comment}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.4}}
+        <div class="mod-knob"></div>
+        {{#controls.1}}
+        <div class="mod-knob" title="{{comment}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.1}}
+        {{#controls.2}}
+        <div class="mod-knob" title="{{comment}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.2}}
+        {{#controls.0}}
+        <div class="mod-knob" title="{{comment}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.0}}
+    </div>
+    <!-- SECOND ROW: OP 1..6 labels, OP 1..6 ratios
+         THIRD ROW / SLIDERS: OP 1..6 sliders -->
+    <div class="mod-control-group ratios">
+        {{#controls.17}}
+        <div class="op-title" mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="switch">{{name}}</div>
+	{{/controls.17}}
+        {{#controls.18}}
+        <div class="op-title" mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="switch">{{name}}</div>
+	{{/controls.18}}
+        {{#controls.19}}
+        <div class="op-title" mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="switch">{{name}}</div>
+	{{/controls.19}}
+        {{#controls.20}}
+        <div class="op-title" mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="switch">{{name}}</div>
+	{{/controls.20}}
+        {{#controls.21}}
+        <div class="op-title" mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="switch">{{name}}</div>
+	{{/controls.21}}
+        {{#controls.22}}
+        <div class="op-title" mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="switch">{{name}}</div>
+	{{/controls.22}}
+        {{#controls.5}}
+        <div class="mod-knob" title="{{name}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.5}}
+        {{#controls.6}}
+        <div class="mod-knob" title="{{name}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.6}}
+        {{#controls.7}}
+        <div class="mod-knob" title="{{name}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.7}}
+        {{#controls.8}}
+        <div class="mod-knob" title="{{name}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.8}}
+        {{#controls.9}}
+        <div class="mod-knob" title="{{name}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.9}}
+        {{#controls.10}}
+        <div class="mod-knob" title="{{name}}">
+            <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-knob-title">{{name}}</span>
+        </div>
+        {{/controls.10}}
+	<div class="section-title">Coarse freq</div>
+        {{#controls.11}}
+	<div class="mod-slider" title="{{name}}">
+            <div class="mod-slider-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-slider-title">{{name}}</span>
+        </div>
+	{{/controls.11}}
+	{{#controls.12}}
+	<div class="mod-slider" title="{{name}}">
+            <div class="mod-slider-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-slider-title">{{name}}</span>
+        </div>
+	{{/controls.12}}
+	{{#controls.13}}
+	<div class="mod-slider" title="{{name}}">
+            <div class="mod-slider-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-slider-title">{{name}}</span>
+        </div>
+	{{/controls.13}}
+	{{#controls.14}}
+	<div class="mod-slider" title="{{name}}">
+            <div class="mod-slider-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-slider-title">{{name}}</span>
+        </div>
+	{{/controls.14}}
+	{{#controls.15}}
+	<div class="mod-slider" title="{{name}}">
+            <div class="mod-slider-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-slider-title">{{name}}</span>
+        </div>
+	{{/controls.15}}
+	{{#controls.16}}
+	<div class="mod-slider" title="{{name}}">
+            <div class="mod-slider-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
+            <span class="mod-slider-title">{{name}}</span>
+        </div>
+	{{/controls.16}}
+	<div class="section-title">Level</div>
+    </div>
+</div>

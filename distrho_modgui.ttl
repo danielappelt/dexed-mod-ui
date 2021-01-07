@@ -1,0 +1,110 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+
+<https://github.com/asb2m10/dexed>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/dexed.html> ;
+        modgui:stylesheet <modgui/dexed.css> ;
+	modgui:javascript <modgui/dexed.js> ;
+        modgui:screenshot <modgui/screenshot.png> ;
+        modgui:thumbnail <modgui/thumbnail.png> ;
+        modgui:label "Dexed" ;
+# volume cutoff resonance algorithm feedback
+# coarse op1..op6
+# volume op1..op6
+# on/off op1..op6
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "output" ;
+            lv2:name "Volume" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "cutoff" ;
+            lv2:name "Cutoff" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "resonance" ;
+            lv2:name "Resonance" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "algorithm" ;
+            lv2:name "Algorithm" ;
+        ] , [
+            lv2:index 4 ;
+            lv2:symbol "feedback" ;
+            lv2:name "Feedback" ;
+        ] , [
+            lv2:index 5 ;
+            lv2:symbol "op1_f_coarse" ;
+            lv2:name "OP1 Coarse" ;
+        ] , [
+            lv2:index 6 ;
+            lv2:symbol "op2_f_coarse" ;
+            lv2:name "OP2 Coarse" ;
+        ] , [
+            lv2:index 7 ;
+            lv2:symbol "op3_f_coarse" ;
+            lv2:name "OP3 Coarse" ;
+        ] , [
+            lv2:index 8 ;
+            lv2:symbol "op4_f_coarse" ;
+            lv2:name "OP4 Coarse" ;
+        ] , [
+            lv2:index 9 ;
+            lv2:symbol "op5_f_coarse" ;
+            lv2:name "OP5 Coarse" ;
+        ] , [
+            lv2:index 10 ;
+            lv2:symbol "op6_f_coarse" ;
+            lv2:name "OP6 Coarse" ;
+        ] , [
+            lv2:index 11 ;
+            lv2:symbol "op1_output_level" ;
+            lv2:name "OP1 Level" ;
+        ] , [
+            lv2:index 12 ;
+            lv2:symbol "op2_output_level" ;
+            lv2:name "OP2 Level" ;
+        ] , [
+            lv2:index 13 ;
+            lv2:symbol "op3_output_level" ;
+            lv2:name "OP3 Level" ;
+        ] , [
+            lv2:index 14 ;
+            lv2:symbol "op4_output_level" ;
+            lv2:name "OP4 Level" ;
+        ] , [
+            lv2:index 15 ;
+            lv2:symbol "op5_output_level" ;
+            lv2:name "OP5 Level" ;
+        ] , [
+            lv2:index 16 ;
+            lv2:symbol "op6_output_level" ;
+            lv2:name "OP6 Level" ;
+        ] , [
+            lv2:index 17 ;
+            lv2:symbol "op1_switch" ;
+            lv2:name "OP1" ;
+        ] , [
+            lv2:index 18 ;
+            lv2:symbol "op2_switch" ;
+            lv2:name "OP2" ;
+        ] , [
+            lv2:index 19 ;
+            lv2:symbol "op3_switch" ;
+            lv2:name "OP3" ;
+        ] , [
+            lv2:index 20 ;
+            lv2:symbol "op4_switch" ;
+            lv2:name "OP4" ;
+        ] , [
+            lv2:index 21 ;
+            lv2:symbol "op5_switch" ;
+            lv2:name "OP5" ;
+        ] , [
+            lv2:index 22 ;
+            lv2:symbol "op6_switch" ;
+            lv2:name "OP6" ;
+        ] ;
+    ] .
