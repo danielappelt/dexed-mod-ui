@@ -1,24 +1,7 @@
-// <p>
-// A Javascript file containing a declaration of an anonymous function which will be called once when plugin interface is first rendered and everytime a port value is changed.
-// </p>
-// <p>
-// This function will receive as parameter an event object containing:
-// </p>
-// <ul>
-//   <li><i>type</i>: either "start", if plugin is being instantiated, or "change", if an input port value is being changed;</li>
-//   <li><i>ports</i>: an array of { symbol, value } objects with all port values, if <i>type</i> is "start";</li>
-//   <li><i>symbol</i>: the port input port which value is being changed, if <i>type</i> is "change";</li>
-//   <li><i>value</i>: the input port value, if <i>type</i> is "change";</li>
-//   <li><i>icon</i>: the JQuery object encapsulating the DOM object of the main plugin interface.</li>
-//   <li><i>settings</i>: JQuery object with the settings screen interface.</li>
-//   <li><i>data</i>: A object that can be used by this javascript function to store anything that should persist between calls.</li>
-// </ul>
-// see https://github.com/moddevices/mod-sdk/blob/master/modgui.lv2/modgui.ttl
-
-// Init voice
+// TODO: Init voice
 // https://github.com/asb2m10/dexed/blob/master/Source/PluginData.cpp#L229
 // https://github.com/asb2m10/dexed/blob/master/Source/PluginData.cpp#L120
-// mod-role="input-control-value" mod-port-symbol="cutoff" -> .text(<new value>)
+// Update cutoff parameter via JS code:
 // $('[mod-port-symbol=cutoff][mod-role=input-control-value]').text('0.5').blur()
 // const char init_voice[] =
 //     EG rate 1..4, EG level 1..4, brkpt, depth, scaling, left curve, right curve, unknown, kvs, ams, OP Level, uknown, coarse mode oder on/off, fine freq, detune rs,
@@ -32,8 +15,10 @@
 //     99, 99, 99, 99, 50, 50, 50, 50, 0, 0, 1, 35, 0, 0, 0, 1, 0, 3, 24,
 //     73, 78, 73, 84, 32, 86, 79, 73, 67, 69 };
 
+// A JavaScript function which will be called once when plugin interface is first rendered and everytime a port value is changed.
 function (event) {
-    //'use strict'
+    'use strict'
+    // event properties:
     //   <li><i>type</i>: either "start", if plugin is being instantiated, or "change", if an input port value is being changed;</li>
     //   <li><i>ports</i>: an array of { symbol, value } objects with all port values, if <i>type</i> is "start";</li>
     //   <li><i>symbol</i>: the port input port which value is being changed, if <i>type</i> is "change";</li>
@@ -41,6 +26,7 @@ function (event) {
     //   <li><i>icon</i>: the JQuery object encapsulating the DOM object of the main plugin interface.</li>
     //   <li><i>settings</i>: JQuery object with the settings screen interface.</li>
     //   <li><i>data</i>: A object that can be used by this javascript function to store anything that should persist between calls.</li>
+    // see https://github.com/moddevices/mod-sdk/blob/master/modgui.lv2/modgui.ttl
 
     var maxValue = Number(event.icon.find('.algorithm.maximum').text());
     var ALG_SYMBOL = maxValue === 1 ? 'algorithm' : 'algorithm_num';
@@ -51,10 +37,10 @@ function (event) {
 
     var displayOp = function($ops, idx, x, y, link, fb) {
         // $ops contains 4 divs á 6 spans
-        $op = $ops.children().eq(y).children().eq(x);
-        $op.text("" + idx).addClass('link-' + link).toggleClass('fb', !!fb);
+        var $op = $ops.children().eq(y).children().eq(x);
+        $op.text('' + idx).addClass('link-' + link).toggleClass('fb', !!fb);
 
-        // Highlight output OP idx (OP is in row 3)
+        // Highlight OP label of carriers (OP is in row 3)
         event.icon.find('.ratios').children().eq(idx - 1).toggleClass('output', y === 3);
     };
 
@@ -65,6 +51,10 @@ function (event) {
                 event.value = o.value;
             }
         });
+    } else {
+	// Update parameter display
+	event.icon.find('.mod-presets input').first().val(event.symbol);
+	event.icon.find('.mod-presets input').last().val(('' + event.value).substring(0, 8));
     }
 
     if(event.symbol === ALG_SYMBOL) {

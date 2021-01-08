@@ -31,7 +31,7 @@
 /* PLUGIN NAME
 ================================================ */
 .dexed{{{cns}}} .mod-plugin-name {
-    top: 27px;
+    top: 13px;
     overflow:hidden;
     position:absolute;
     left:117px;
@@ -61,7 +61,7 @@
     background-image: url(/resources/pedals/switch-001.png{{{ns}}});
     background-repeat: no-repeat;
     background-size: auto 71px;
-    top: 18px;
+    top: 4px;
     cursor:pointer;
     height: 71px;
     left: 16px;
@@ -125,7 +125,7 @@
 /* PRESETS
 ================================================ */
 .dexed{{{cns}}} .mod-control-group.mod-presets {
-    top: 94px;
+    top: 80px;
     left: 25px;
     width: 184px !important;
     right: initial;
@@ -133,6 +133,25 @@
 
 .dexed{{{cns}}} .mod-control-group.mod-presets select {
     width: 100%;
+    margin-bottom: 7px;
+}
+
+.dexed{{{cns}}} .mod-control-group.mod-presets input {
+    color: black;
+    float: left;
+    height: 20px;
+    width: 8em;
+    z-index: -1;
+}
+.dexed{{{cns}}} .mod-control-group.mod-presets input:last-child {
+    margin-left: 2px;
+    text-align: right;
+    width: 5em;
+}
+
+.dexed{{{cns}}}.off .mod-control-group.mod-presets select,
+.dexed{{{cns}}}.off .mod-control-group.mod-presets input {
+    color: #fff;
 }
 
 /* SLIDER
