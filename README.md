@@ -11,18 +11,23 @@ LV2 plugin host [mod-host](https://github.com/moddevices/mod-host) allows having
 * Direct access to coarse ratio and level of each operator
 * Operator labels serve as on/off switches and indicate carriers
 * Algorithm visualization
+* Display of name and value for the last parameter changed
 * Bypass switch
 * Supports LV2 ports of dcoredump and DISTRHO
 
 ## Future Direction
 
 * Finalize algorithm visualization
-* Add a parameter value display
 * Add operator parameters in a spreadsheet-like manner
 
 ## Getting Started
 
-Create a local copy of your Dexed LV2 plugin in your LV2 user folder (most likely `~/.lv2`). Depending on your installation location this might look like this ```cp -r /usr/lib/lv2/Dexed.lv2 ~/.lv2/```. Clone this repository or copy the contents of this repository into your local Dexed folder (`~/.lv2/Dexed.lv2/` in the example above). In case you are targeting the Dexed DISTHRO port apply the patch in `distrho_manifest.ttl.patch`, i.e. ```patch manifest.ttl distrho_manifest.ttl.patch```. Start mod-host and enjoy your new Dexed UI.
+Create a local copy of your Dexed LV2 plugin in your LV2 user folder (most likely `~/.lv2`). Depending on your installation location this might look like this
+```cp -r /usr/lib/lv2/Dexed.lv2 ~/.lv2/```
+Clone this repository or copy the contents of this repository into your local Dexed folder (`~/.lv2/Dexed.lv2/` in the example above).
+In case you are targeting the Dexed DISTHRO port apply the patch in `distrho_manifest.ttl.patch`, i.e.
+```patch manifest.ttl distrho_manifest.ttl.patch```
+Start mod-host and enjoy your new Dexed UI.
 
 ## Related projects
 
