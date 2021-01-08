@@ -52,9 +52,9 @@ function (event) {
             }
         });
     } else {
-	// Update parameter display
-	event.icon.find('.mod-presets input').first().val(event.symbol);
-	event.icon.find('.mod-presets input').last().val(('' + event.value).substring(0, 8));
+        // Update parameter display
+        event.icon.find('.mod-presets input').first().val(event.symbol);
+        event.icon.find('.mod-presets input').last().val(('' + event.value).substring(0, 8));
     }
 
     if(event.symbol === ALG_SYMBOL) {

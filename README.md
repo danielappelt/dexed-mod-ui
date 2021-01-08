@@ -23,10 +23,14 @@ LV2 plugin host [mod-host](https://github.com/moddevices/mod-host) allows having
 ## Getting Started
 
 Create a local copy of your Dexed LV2 plugin in your LV2 user folder (most likely `~/.lv2`). Depending on your installation location this might look like this
+
 ```cp -r /usr/lib/lv2/Dexed.lv2 ~/.lv2/```
+
 Clone this repository or copy the contents of this repository into your local Dexed folder (`~/.lv2/Dexed.lv2/` in the example above).
 In case you are targeting the Dexed DISTHRO port apply the patch in `distrho_manifest.ttl.patch`, i.e.
+
 ```patch manifest.ttl distrho_manifest.ttl.patch```
+
 Start mod-host and enjoy your new Dexed UI.
 
 ## Related projects
