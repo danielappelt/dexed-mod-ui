@@ -18,7 +18,12 @@ LV2 plugin host [mod-host](https://github.com/moddevices/mod-host) allows having
 ## Future Direction
 
 * Finalize algorithm visualization
-* Add operator parameters in a spreadsheet-like manner
+* Initialize patch button
+* Add operator parameters in a spreadsheet-like manner (cf. https://github.com/moddevices/mod-ui/blob/07864534a29d89299b11a26059cc52f9a3c7331c/html/js/modgui.js#L1765)
+** https://www.dtronics.nl/dt-7
+** http://smbolton.com/hexter/hexter-screenshot_retro.jpg
+** http://dxconvert.martintarenskeen.nl/
+
 
 ## Getting Started
 

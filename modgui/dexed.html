@@ -48,7 +48,6 @@
             <div class="mod-knob-image" mod-role="input-control-port" mod-port-symbol="{{symbol}}"></div>
             <span class="mod-knob-title">{{name}}</span>
         </div>
-        <!-- <input mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="select"> -->
         {{/controls.3}}
         {{#controls.4}}
         <div class="mod-knob" title="{{comment}}">
@@ -171,5 +170,10 @@
         </div>
         {{/controls.16}}
         <div class="section-title">Level</div>
+    </div>
+    <div class="mod-control-group programmer">
+        {{#controls.16}}
+        <input type="number" mod-role="input-control-port" mod-port-symbol="{{symbol}}" mod-widget="select">
+        {{/controls.16}}
     </div>
 </div>

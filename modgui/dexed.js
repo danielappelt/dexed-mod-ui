@@ -45,12 +45,11 @@ function (event) {
     };
 
     if(event.type === 'start') {
-        event.ports.forEach(function(o) {
-            if(o.symbol === ALG_SYMBOL) {
-                event.symbol = o.symbol;
-                event.value = o.value;
-            }
-        });
+	event.icon.find('.mod-plugin-name').click(_e => event.icon.children().first().toggleClass('programmer'));
+
+	// Initiate operators rendering
+	event.symbol = ALG_SYMBOL;
+	event.value = event.ports.find(p => p.symbol === ALG_SYMBOL).value;
     } else {
         // Update parameter display
         event.icon.find('.mod-presets input').first().val(event.symbol);

@@ -2,7 +2,7 @@
 
 /* CONTAINER
 ================================================ */
-.dexed{{{cns}}} {
+.dexed{{{cns}}}, .dexed{{{cns}}} .programmer {
     background: linear-gradient(135deg, #aaa, #666);
     background-position:center center;
     background-repeat:no-repeat;
@@ -27,6 +27,9 @@
 .dexed{{{cns}}} .mod-pedal-output {
     margin-right: -5px;
 }
+.dexed{{{cns}}}.programmer .mod-pedal-output {
+    margin-right: -448px;
+}
 
 /* PLUGIN NAME
 ================================================ */
@@ -36,6 +39,8 @@
     position:absolute;
     left:117px;
     text-align:right;
+    cursor: pointer;
+    z-index: 21;
 }
 
 .dexed{{{cns}}} .mod-plugin-name h1 {
@@ -364,7 +369,6 @@
     left: -1.2rem;
 }
 
-
 /*
 switch(link) {
         case 0 : // LINE DOWN
@@ -399,3 +403,19 @@ switch(link) {
             break;
     }
 */
+
+.dexed{{{cns}}} .programmer {
+    position: absolute;
+    top: -5px;
+    left: 438px;
+    background: linear-gradient(135deg, #777, #333);
+    display: none;
+}
+
+.dexed{{{cns}}}.programmer .programmer {
+    display: block;
+}
+
+.dexed{{{cns}}} .programmer input {
+    margin: 10px;
+}
