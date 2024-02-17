@@ -405,6 +405,10 @@ switch(link) {
 */
 
 .dexed{{{cns}}} .programmer {
+    box-sizing: border-box;
+    padding: 32px;
+    width: 439px;
+    height: 596px;
     position: absolute;
     top: -5px;
     left: 438px;
@@ -413,9 +417,44 @@ switch(link) {
 }
 
 .dexed{{{cns}}}.programmer .programmer {
-    display: block;
+     display: block;
 }
 
+.dexed{{{cns}}} .programmer table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.dexed{{{cns}}} .programmer table th {
+    text-align: center;
+}
+
+.dexed{{{cns}}} .programmer td:nth-child(2n), .dexed{{{cns}}} .programmer th:nth-child(2n) {
+    padding-left: 5px;
+}
+
+.dexed{{{cns}}} .programmer td:nth-child(2n+1), .dexed{{{cns}}} .programmer th:nth-child(2n+1) {
+    padding-right: 5px;
+}
+
+/* .dexed{{{cns}}} .programmer tbody { */
+/*     border: 1px solid lightgreen; */
+/* } */
+
 .dexed{{{cns}}} .programmer input {
-    margin: 10px;
+    background: transparent;
+    border: none;
+    color: lightgreen;
+    text-align: center;
+    width: 100%;
+    /* margin: 2px; */
+}
+
+.dexed{{{cns}}} .programmer input:focus {
+    background: yellow;
+    color: black;
+}
+
+.dexed{{{cns}}} .programmer input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

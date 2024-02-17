@@ -20,10 +20,11 @@ LV2 plugin host [mod-host](https://github.com/moddevices/mod-host) allows having
 * Finalize algorithm visualization
 * Initialize patch button
 * Add operator parameters in a spreadsheet-like manner (cf. https://github.com/moddevices/mod-ui/blob/07864534a29d89299b11a26059cc52f9a3c7331c/html/js/modgui.js#L1765)
-** https://www.dtronics.nl/dt-7
-** http://smbolton.com/hexter/hexter-screenshot_retro.jpg
-** http://dxconvert.martintarenskeen.nl/
-
+  * https://dtronics.nl/dt-7
+  * http://smbolton.com/hexter/hexter-screenshot_retro.jpg
+  * http://dxconvert.martintarenskeen.nl/
+  * To use it with the mouse add two cursor keys and a value dial
+  * Scale input fields corresponding to DX7 value ranges (cf. https://github.com/smbolton/hexter/blob/1cf1bfea5962f7c9726e0cf809b762b3b2655225/src/dx7_voice.c#L1351)
 
 ## Getting Started
 
